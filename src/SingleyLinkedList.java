@@ -50,11 +50,28 @@ public class SingleyLinkedList {
 	}
 
 	public void popFirstElement() {
-		
+
 		if (head == null)
-             System.out.println("No Element in Linked LIst");
+			System.out.println("No Element in Linked LIst");
 		Node temp = head;
 		head = head.next;
+
+	}
+
+	public void popLastElement() {
+		if (head == null)
+
+			if (head.next == null) {
+
+			}
+
+		// Find the second last node
+		Node second_last = head;
+		while (second_last.next.next != null)
+			second_last = second_last.next;
+
+		// Change next of second last
+		second_last.next = null;
 
 	}
 
