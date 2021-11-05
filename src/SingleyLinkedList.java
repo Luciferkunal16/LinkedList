@@ -8,18 +8,16 @@ public class SingleyLinkedList {
 		Node newNode = new Node(data);
 		if (head == null) {
 			head = newNode;
-			head.next = tail;
+			
 		} else {
-			if (head.next == null) {
-				newNode.prev = head;
-				head.next = newNode;
-				tail = newNode;
-			} else {
-				tail.next = newNode;
-				newNode.prev = this.tail;
-				tail = newNode;
+			Node temp=head;
+			while(temp.next!=null)
+			{
+				temp=temp.next;
 			}
+			temp.next=newNode;
 		}
+			
 
 	}
 
@@ -73,6 +71,24 @@ public class SingleyLinkedList {
 		// Change next of second last
 		second_last.next = null;
 
+	}
+	void search( int x)
+	{
+	    Node current = head;// Initialize current
+	    int position=1;
+	    while (current != null)
+	    {
+	        if (current.data == x)
+	        	{
+	        	System.out.println("Found At Location "+position);
+	        	return;
+	        	}
+	        else {
+	        current = current.next;
+	        position++;
+	        }
+	    }
+	    
 	}
 
 	public void display() {
