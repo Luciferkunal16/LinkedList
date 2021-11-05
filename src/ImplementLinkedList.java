@@ -17,7 +17,10 @@ public class ImplementLinkedList {
 		System.out.println("5)Pop First Element");
 		System.out.println("6)Pop Last Element");
 		System.out.println("7)Search For an Element");
-		System.out.println("8)Exit");
+		System.out.println("8)Insert Location between two data item");
+		System.out.println("9)Sort Linked List");
+				System.out.println("10)Exit");
+
 		
 		
 		choice=inp.nextInt();
@@ -61,8 +64,21 @@ public class ImplementLinkedList {
 			int num=inp.nextInt();
 			list.search(num);
 		}
+		else if(choice==8) {
+			System.out.println("Enter the new Node data");
+			int newdata=inp.nextInt();
+			System.out.println("Enter the First Element");
+			int first=inp.nextInt();
+			System.out.println("Enter the Secound Element");
+			int secound=inp.nextInt();
+			list.insertBetweenTwoNodeByValue(newdata, first, secound);
+		}
+		else if(choice==9) {
+			list.sortList();
+		}
 		System.out.println();
-		}while(choice!=8);
+		
+		}while(choice!=10);
 		
 	
 		
